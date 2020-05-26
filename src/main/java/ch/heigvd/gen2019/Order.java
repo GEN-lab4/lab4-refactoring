@@ -27,7 +27,7 @@ public class Order {
         products.add(product);
     }
 
-    public String getOrderContent() {
+    public String getOrderJSON() {
         StringBuffer sb = new StringBuffer();
         sb.append("{");
         sb.append("\"id\": ");
@@ -36,7 +36,7 @@ public class Order {
         sb.append("\"products\": [");
         for (int j = 0; j < getProductsCount(); j++) {
 
-            sb.append(getProduct(j).getContent());
+            sb.append(getProduct(j).getProductJSON());
         }
 
         if (getProductsCount() > 0) {

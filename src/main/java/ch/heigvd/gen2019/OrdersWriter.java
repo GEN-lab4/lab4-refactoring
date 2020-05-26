@@ -9,12 +9,12 @@ public class OrdersWriter {
         this.orders = orders;
     }
 
-    public String getContents() {
+    public String getContentsJSON() {
         StringBuffer sb = new StringBuffer("{\"orders\": [");
 
         for (int i = 0; i < orders.getOrdersCount(); i++) {
             Order order = orders.getOrder(i);
-            sb.append(order.getOrderContent());
+            sb.append(order.getOrderJSON());
         }
 
         if (orders.getOrdersCount() > 0) {
