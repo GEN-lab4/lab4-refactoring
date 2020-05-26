@@ -12,12 +12,6 @@ public class OrdersWriter {
     public String getContentsJSON() {
         StringBuffer sb = new StringBuffer("{\"orders\": [");
 
-        /*
-        for (int i = 0; i < orders.getOrdersCount(); i++) {
-            Order order = orders.getOrder(i);
-            sb.append(order.getOrderJSON());
-        }*/
-
         for (Order order : orders) {
             sb.append(order.getOrderJSON());
         }
