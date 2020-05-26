@@ -1,5 +1,7 @@
 package ch.heigvd.gen2019;
 
+import java.util.ArrayList;
+
 public class OrdersWriter {
     private Orders orders;
 
@@ -12,7 +14,7 @@ public class OrdersWriter {
 
         for (int i = 0; i < orders.getOrdersCount(); i++) {
             Order order = orders.getOrder(i);
-            order.getOrderContent(sb);
+            sb.append(order.getOrderContent());
         }
 
         if (orders.getOrdersCount() > 0) {
