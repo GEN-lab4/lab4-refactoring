@@ -3,6 +3,11 @@ package ch.heigvd.gen2019;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 public class OrdersWriterTest {
     Orders orders = new Orders();
     Order order111 = new Order(111);
