@@ -43,7 +43,7 @@ public class Product {
         return getColor().toString();
     }
 
-    void getProductContent(StringBuffer sb) {
+    void getContent(StringBuffer sb) {
         sb.append("{");
         sb.append("\"code\": \"");
         sb.append(getCode());
