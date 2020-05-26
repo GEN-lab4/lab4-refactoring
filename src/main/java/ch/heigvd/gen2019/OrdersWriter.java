@@ -48,7 +48,7 @@ public class OrdersWriter {
 
         if (product.getSize() != Product.SIZE_NOT_APPLICABLE) {
             sb.append("\"size\": \"");
-            sb.append(product.getSizeFor());
+            sb.append(product.getSizeName());
             sb.append("\", ");
         }
 
