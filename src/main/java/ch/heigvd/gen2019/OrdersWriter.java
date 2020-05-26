@@ -19,7 +19,7 @@ public class OrdersWriter {
             sb.append("\"products\": [");
             for (int j = 0; j < order.getProductsCount(); j++) {
 
-                getProductContents(sb, order.getProduct(j));
+                getProductContent(sb, order.getProduct(j));
             }
 
             if (order.getProductsCount() > 0) {
@@ -37,13 +37,13 @@ public class OrdersWriter {
         return sb.append("]}").toString();
     }
 
-    private void getProductContents(StringBuffer sb, Product product) {
+    private void getProductContent(StringBuffer sb, Product product) {
         sb.append("{");
         sb.append("\"code\": \"");
         sb.append(product.getCode());
         sb.append("\", ");
         sb.append("\"color\": \"");
-        sb.append(getColorFor(product));
+        sb.append(product.getColorName());
         sb.append("\", ");
 
         if (product.getSize() != Product.SIZE_NOT_APPLICABLE) {
@@ -60,16 +60,4 @@ public class OrdersWriter {
         sb.append("\"}, ");
     }
 
-    private String getColorFor(Product product) {
-        switch (product.getColor()) {
-            case 1:
-                return "blue";
-            case 2:
-                return "red";
-            case 3:
-                return "yellow";
-            default:
-                return "no color";
-        }
-    }
 }
