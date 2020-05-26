@@ -15,55 +15,27 @@ public class Product {
         this.currency = currency;
     }
 
-    public String getCode() {
-        return code;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public Size getSize() {
-        return size;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getCurrency() {
-        return currency;
-    }
-
-    public String getSizeName() {
-        return getSize().toString();
-    }
-
-    public String getColorName() {
-        return getColor().toString();
-    }
-
     public String getProductJSON() {
         StringBuffer sb = new StringBuffer();
         sb.append("{");
         sb.append("\"code\": \"");
-        sb.append(getCode());
+        sb.append(code);
         sb.append("\", ");
         sb.append("\"color\": \"");
-        sb.append(getColorName());
+        sb.append(color.toString());
         sb.append("\", ");
 
-        if (getSize() != Size.NONE) {
+        if (size != Size.NONE) {
             sb.append("\"size\": \"");
-            sb.append(getSizeName());
+            sb.append(size.toString());
             sb.append("\", ");
         }
 
         sb.append("\"price\": ");
-        sb.append(getPrice());
+        sb.append(price);
         sb.append(", ");
         sb.append("\"currency\": \"");
-        sb.append(getCurrency());
+        sb.append(currency);
         sb.append("\"}, ");
         return sb.toString();
     }
